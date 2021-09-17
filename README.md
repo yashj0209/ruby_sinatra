@@ -12,7 +12,7 @@ The first step is to download the repository to your local workspace.
 git clone git@github.com:yashj0209/buildspec_ruby_example.git
 ```
 
-### Install the Requirements and Run the App (TO EDIT)
+### Install the Requirements and Run the App
 Open a terminal and test out the Ruby Hello World web app example.
 
 1. Download and install Ruby : https://www.ruby-lang.org/en/downloads/
@@ -64,7 +64,7 @@ Create an [Artifact Registry](https://docs.oracle.com/en-us/iaas/artifacts/using
 2. You can name the artifact repo: ```ruby-sinatra-example-repo```
 
 
-#### Create a DevOps Artifact for your container image repository 
+#### Create a DevOps Artifact for your Artifact Registry
 
 In the project, under Artifacts, create a DevOps Artifact to point to the Artifact repository location you just created above. Enter the information for the Artifact location:
 
