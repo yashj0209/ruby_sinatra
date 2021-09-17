@@ -13,7 +13,7 @@ steps :
        echo "Ruby version is $(ruby -v)"
        echo "Installing Bundler"
        gem install bundler
-       bundle install --without test
+       bundle install 
        echo "Ready to execute"
        ruby app.rb > result.txt
        echo "Exiting"
