@@ -1,29 +1,14 @@
 require 'sinatra'
-require 'haml' # template engine
-require 'json'
+require 'haml' # templating engine
 
-# control part of MVC
-# an HTTP method paired with a URL-matching pattern
+set :bind, "0.0.0.0"
+port = ENV["PORT"] || "9000"
+set :port, port
+
+#this method calls haml template defined in views folder
 get '/' do
-  # page variable
-  @version = RUBY_VERSION
-  @os = RUBY_PLATFORM
-  @env = {}
-  ENV.each do |key, value|
-    begin
-      hash = JSON.parse(value)
-      @env[key] = hash
-    rescue
-      @env[key] = value
-    end
-  end
-  
-  
-  #VCAP_APPLICATION contains useful information about a deployed application.
-  appInfo = @env["VCAP_APPLICATION"]
 
-  services = @env["VCAP_SERVICES"]
+  #hello world haml template
+  haml :helloWorld
 
-  # render template
-  haml :hi
-end
+end                                                                                                                            
