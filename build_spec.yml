@@ -18,6 +18,13 @@ steps :
        #echo "starting server"
        #ruby app.rb > result.txt
        echo "build complete"
+       
+    onFailure:
+      - type: Command
+        command: |
+          echo "Execution failed"
+        timeoutInSeconds: 2000
+        runAs: root
 
 
 outputArtifacts:
