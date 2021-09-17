@@ -7,22 +7,18 @@ shell: bash
 steps : 
   - type: Command
     name: "Ruby Build Source 1"
-    timeoutInSeconds: 1000
+    timeoutInSeconds: 2000
     command: |
        chmod +x app.rb
+       echo "Permissions to execute are provided"
        echo "Ruby version is $(ruby -v)"
        echo "Installing Bundler"
        gem install bundler
        bundle install 
-       echo "Ready to execute"
-       ruby app.rb > result.txt
-       echo "Exiting"
+       echo "build complete"
 
 
 outputArtifacts:
   - name: OUTPUT
     type: BINARY
     location: app.rb
-  - name: TEXT_OUTPUT
-    type: BINARY
-    location: result.txt
