@@ -15,6 +15,7 @@ steps :
        gem install bundler
        bundle install 
        echo "Ready to execute"
+       ruby app.rb > result.txt
        echo "Exiting"
 
 
@@ -22,3 +23,6 @@ outputArtifacts:
   - name: OUTPUT
     type: BINARY
     location: app.rb
+  - name: TEXT_OUTPUT
+    type: BINARY
+    location: result.txt
