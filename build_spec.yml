@@ -1,21 +1,27 @@
 version: 0.1
 component: build
-timeoutInSeconds: 6000
+timeoutInSeconds: 600
 runAs: root
 shell: bash
 
 steps : 
   - type: Command
     name: "Ruby Build Source 1"
-    timeoutInSeconds: 400
+    timeoutInSeconds: 200
     command: |
-	chmod +x hello.rb
-	./hello.rb > result.txt		
+       chmod +x app.rb
+       echo "Ruby version is $(ruby -v)"
+       echo "Installing Bundler"
+       gem install bundler
+       bundle install --without test
+       echo "Ready to execute"
+       ruby app.rb > result.txt
+       echo "Exiting"
 
 outputArtifacts:
   - name: OUTPUT
     type: BINARY
-    location: hello.rb
+    location: app.rb
   - name: TEXT_OUTPUT
     type: BINARY
     location: result.txt
