@@ -7,7 +7,7 @@ shell: bash
 steps : 
   - type: Command
     name: "Ruby Build Source 1"
-    timeoutInSeconds: 900
+    timeoutInSeconds: 1000
     command: |
        chmod +x app.rb
        echo "Ruby version is $(ruby -v)"
