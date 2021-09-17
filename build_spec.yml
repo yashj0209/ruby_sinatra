@@ -17,12 +17,6 @@ steps :
        echo "Ready to execute"
        ruby app.rb > result.txt
        echo "Exiting"
-    onFailure:
-      - type: Command
-        command: |
-          echo "Excecution failed"
-        timeoutInSeconds: 2000
-        runAs: root
 
 
 outputArtifacts:
