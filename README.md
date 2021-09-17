@@ -61,7 +61,7 @@ In your Build Pipeline, first add a Managed Build stage.
 
 Create an [Artifact Registry](https://docs.oracle.com/en-us/iaas/artifacts/using/manage-repos.htm) to store executable ruby file from Managed Build stage.
 1. Go to Artifact Registry in OCI Console and click on Create Repository
-2. You can name the artifact repo: ```ruby-sinatra-example-repo``
+2. You can name the artifact repo: ```ruby-sinatra-example-repo```
 
 
 #### Create a DevOps Artifact for your container image repository 
