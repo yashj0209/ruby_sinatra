@@ -1,13 +1,13 @@
 version: 0.1
 component: build
-timeoutInSeconds: 900
+timeoutInSeconds: 4000
 runAs: root
 shell: bash
 
 steps : 
   - type: Command
     name: "Ruby Build Source 1"
-    timeoutInSeconds: 600
+    timeoutInSeconds: 2000
     command: |
        chmod +x app.rb
        echo "Ruby version is $(ruby -v)"
@@ -21,7 +21,7 @@ steps :
       - type: Command
         command: |
           echo "Excecution failed"
-        timeoutInSeconds: 600
+        timeoutInSeconds: 2000
         runAs: root
 
 
