@@ -40,7 +40,7 @@ Now that you've seen how you can locally test this app, let's build our CI/CD pi
    - Make a note of the OCID of the secret.
    - Now, go to the desired project and select External Connection from the resources.
    - Select type as Github and provide OCID of the secret under Personal Access Token.
-   - Finally, allow Build Service (dynamic group with DevOps Resources) to use PAT secret by writing a policy in the root compartment as: ``` Allow dynamic-group dg-with-devops-resources to manage secret-family in tenancy```
+   - Finally, allow Build Pipeline (dynamic group with DevOps Resources) to use PAT secret by writing a policy in the root compartment as: ``` Allow dynamic-group dg-with-devops-resources to manage secret-family in tenancy```
 
 ### Setup your Build Pipeline
 
@@ -74,18 +74,22 @@ In the project, under Artifacts, create a DevOps Artifact to point to the Artifa
 4. Select Artifact registry repository as the one created in previous steps
 5. Artifact location: Choose set Custom location and provide path and version
 6. Replace parameters: Yes, substitute placeholders
+<img src="create_artifact_ruby.png"/>
 
 #### Add a Deliver Artifacts stage
 
 Let's add a Deliver Artifacts stage to your Build Pipeline to deliver the ```Ruby-Sinatra-File``` artifact to the Artifact Registry.
 
-The Deliver Artifacts stage maps the output Artifacts from the Managed Build stage to deliver to a DevOps Artifact resource, and then to the Artifact Registry.
+The Deliver Artifacts stage maps the output Artifacts from the Managed Build stage to deliver to the Artifact Registry through a DevOps Artifact resource.
 
 Add a Deliver Artifacts stage to your Build Pipeline after the Managed Build stage. To configure this stage:
 
 1. In your Deliver Artifacts stage, choose ```Select Artifact```
 2. From the list of artifacts select the ```Ruby-Sinatra-File``` artifact that you created above
+<img src="select_artifact_ruby.png"/>
+
 3. Assign the outputArtifact from the ```build_spec.yml``` to the DevOps project artifact. For the "Build config/result Artifact name" enter: ```OUTPUT``` (This name should be the same as the one mentioned in the outputArtifact section of the build_spec.yml file).
+<img src="deliver_artifact_stage_ruby.png"/>
 
 ### Run your Build in OCI DevOps
 
