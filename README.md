@@ -74,7 +74,8 @@ In the project, under Artifacts, create a DevOps Artifact to point to the Artifa
 4. Select Artifact registry repository as the one created in previous steps
 5. Artifact location: Choose set Custom location and provide path and version
 6. Replace parameters: Yes, substitute placeholders
-<img src="create_artifact_ruby.png"/>
+<img src="create_artifact_ruby_p1.png"/>
+<img src="create_artifact_ruby_p2.png"/>
 
 #### Add a Deliver Artifacts stage
 
