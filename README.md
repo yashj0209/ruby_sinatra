@@ -77,6 +77,10 @@ In the project, under Artifacts, create a DevOps Artifact to point to the Artifa
 <img src="create_artifact_ruby_p1.png"/>
 <img src="create_artifact_ruby_p2.png"/>
 
+Required policies must be added in the root compartment for the Artifact Registry and DevOps Artifact resource. 
+1. Provide access to Artifact registry to deliver artifacts : ``` Allow dynamic-group dg-with-devops-resources to manage generic-artifacts in tenancy ```
+2. Provide access to read deploy artifacts in deliver artifact stage : ``` Allow dynamic-group dg-with-devops-resources to manage devops-family in tenancy ```
+
 #### Add a Deliver Artifacts stage
 
 Let's add a Deliver Artifacts stage to your Build Pipeline to deliver the ```Ruby-Sinatra-File``` artifact to the Artifact Registry.
